@@ -1,3 +1,14 @@
+import os
+from colors import black, blue, red, green, yellow, cyan, reset, magenta, white
+
+moduli = ["discord.py", "requests", "asyncio", "base64", "pyautogui", "keyboard", "pyfiglet", "discord.utils", "typing", "datetime", "webbrower"]
+try:                                           
+  import discord, requests, asyncio, base64, pyautogui, keyboard, pyfiglet, discord.utils, typing, datetime, webbrower
+except ImportError:
+  print("%sChecking if you have the modules installed...\n%s" % (green(), reset()))
+  for librerie in moduli:
+      os.system(f"python -m pip install {librerie}")
+
 from typing import Optional, final
 import discord, pyfiglet
 from discord import user
@@ -12,7 +23,6 @@ import asyncio
 import random
 import os
 import time
-from discord import Webhook
 import sys
 import discord.utils
 from discord.ext.commands import CommandNotFound
@@ -22,11 +32,7 @@ import base64
 import webbrowser
 from discord_markdown.discord_markdown import convert_to_html
 import requests
-import json
-import colorama
-from colors import green, red, yellow, white, cyan, reset, blue
 import datetime
-import socket
 
 intents = discord.Intents.default()
 intents.members = True
